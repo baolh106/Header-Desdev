@@ -1,0 +1,132 @@
+* {
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.container {
+    max-width: 1110px;
+    height: 70px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+}
+
+.header__box {
+    display: flex;
+}
+
+.box__menu {
+    width: 60px;
+    height: 40px;
+    margin-left: 70px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #dfdfdf;
+}
+
+.box__menu a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555555;
+    margin-left: 15px;
+}
+
+.box__menu span {
+    color: #555555;
+    font-size: 16px;
+}
+
+.box__search {
+    width: 517px;
+    height: 40px;
+    border: 1px solid #dfdfdf;
+    border-left: none;
+    position: relative;
+}
+
+.box__search input {
+    width: 100%;
+    height: 100%;
+    padding-left: 12px;
+    outline: none;
+}
+
+.box__search span {
+    position: absolute;
+    color: #a4a4a4;
+    top: 10px;
+    right: 3px;
+    font-size: 20px;
+}
+
+.content__info {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+}
+
+.info__cart {
+    display: flex;
+    align-items: center;
+}
+
+.info__cart span {
+    color: #a4a4a4;
+    font-size: 24px;
+}
+
+.info__cart a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555555;
+    margin-left: 8px;
+}
+
+.info__prevent {
+    width: 1px;
+    height: 32px;
+    background: #dfdfdf;
+    margin-left: 20px;
+}
+
+.info__person {
+    display: flex;
+    align-items: center;
+}
+
+.info__person span:nth-child(1) {
+    margin-left: 18px;
+    color: #a4a4a4;
+    font-size: 26px;
+}
+
+.info__person a {
+    color: #555555;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 8px;
+    flex: none;
+}
+
+.info__person span:nth-child(3) {
+    color: #555555;
+    font-size: 16px;
+    margin-left: 4px;
+}
+
+.box__menu:hover {
+    cursor: pointer;
+}
