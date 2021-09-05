@@ -12,36 +12,136 @@ header {
 
 .container {
     max-width: 1110px;
-    height: 70px;
     margin: 0 auto;
     padding: 0 15px;
-    display: flex;
-    align-items: center;
 }
 
 .header__inner {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .header__box {
     display: flex;
+    padding: 15px 0;
+    margin-left: -20px;
 }
 
 .box__menu {
-    width: 60px;
-    height: 40px;
-    margin-left: 70px;
+    padding: 0 15px;
     display: flex;
     align-items: center;
     border: 1px solid #dfdfdf;
+    position: relative;
+    cursor: pointer;
 }
 
-.box__menu a {
+.menu__dropdown {
+    display: none;
+    position: absolute;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid #dddddd;
+    /* z-index: 1; */
+    top: 100%;
+    left: 0px;
+    padding: 8px;
+    background: #ffffff;
+    margin-top: 14px;
+    margin-left: -1px;
+}
+
+.menu__dropdown a,
+.dropdown__skin {
+    min-width: 254px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
+    text-decoration: none;
+    color: #555555;
+    display: block;
+    padding: 12px 0 12px 8px;
+    /* border-bottom: 2px solid #f3f3f3; */
+}
+
+hr {
+    background: #f3f3f3;
+    padding: 1px;
+}
+
+.box__menu:hover > .menu__dropdown {
+    display: block;
+}
+
+.menu__dropdown > .dropdown__skin:hover {
+    background: #f5f5f5;
+}
+
+.menu__dropdown::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 12px 0;
+    transform: translateY(-100%);
+    background-color: transparent;
+}
+
+/* .menu__dropdown > a:nth-child(5),
+.skin__content a:nth-child(4) {
+    border-bottom: none;
+} */
+
+.dropdown__skin {
+    position: relative;
+}
+
+.dropdown__skin span {
+    color: #a4a4a4;
+    position: absolute;
+    font-size: 20px;
+    top: 10px;
+    right: 0px;
+    background: none;
+}
+
+.skin__content {
+    display: none;
+    position: absolute;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid #dddddd;
+    /* z-index: 1; */
+    top: 0;
+    left: 100%;
+    padding: 8px;
+    background: #ffffff;
+    margin-left: 16px;
+}
+
+.skin__content::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    padding: 0 12px;
+    transform: translateX(-100%);
+    background-color: transparent;
+}
+
+.skin__content a:hover {
+    background: #f5f5f5;
+}
+
+.dropdown__skin:hover > .skin__content {
+    display: block;
+}
+
+.box__menu p {
     font-size: 14px;
     font-weight: bold;
     color: #555555;
-    margin-left: 15px;
 }
 
 .box__menu span {
@@ -50,18 +150,16 @@ header {
 }
 
 .box__search {
-    width: 517px;
-    height: 40px;
+    padding: 12px 344px 12px 12px;
     border: 1px solid #dfdfdf;
     border-left: none;
     position: relative;
+    background-color: #f5f5f5;
 }
 
 .box__search input {
-    width: 100%;
-    height: 100%;
-    padding-left: 12px;
     outline: none;
+    background-color: #f5f5f5;
 }
 
 .box__search span {
@@ -69,13 +167,12 @@ header {
     color: #a4a4a4;
     top: 10px;
     right: 3px;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .content__info {
     display: flex;
     align-items: center;
-    margin-left: 60px;
 }
 
 .info__cart {
@@ -88,18 +185,11 @@ header {
     font-size: 24px;
 }
 
-.info__cart a {
+.info__cart p {
     font-size: 14px;
     font-weight: bold;
     color: #555555;
-    margin-left: 8px;
-}
-
-.info__prevent {
-    width: 1px;
-    height: 32px;
-    background: #dfdfdf;
-    margin-left: 20px;
+    margin-left: 7px;
 }
 
 .info__person {
@@ -108,25 +198,30 @@ header {
 }
 
 .info__person span:nth-child(1) {
-    margin-left: 18px;
     color: #a4a4a4;
     font-size: 26px;
+    margin-right: 6px;
 }
 
-.info__person a {
-    color: #555555;
+.info__person p {
+    color: #a8a1a1;
     font-size: 14px;
     font-weight: bold;
-    margin-left: 8px;
     flex: none;
 }
 
 .info__person span:nth-child(3) {
     color: #555555;
     font-size: 16px;
-    margin-left: 4px;
+}
+.info__cart::after {
+    content: " ";
+    display: block;
+    background-color: #dfdfdf;
+    padding: 16px 1px;
+    margin: 0 15px;
 }
 
-.box__menu:hover {
+/* .box__menu:hover {
     cursor: pointer;
-}
+} */
