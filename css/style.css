@@ -6,6 +6,11 @@
     font-family: "Roboto", sans-serif;
 }
 
+body {
+    font-size: 14px;
+    font-weight: 700;
+}
+
 header {
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
 }
@@ -20,12 +25,19 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 70px;
+}
+
+.header__logo {
+    cursor: pointer;
 }
 
 .header__box {
     display: flex;
     padding: 15px 0;
-    margin-left: -20px;
+    margin-left: 54px;
+    margin-right: 60px;
+    width: 100%;
 }
 
 .box__menu {
@@ -33,7 +45,9 @@ header {
     display: flex;
     align-items: center;
     border: 1px solid #dfdfdf;
+    border-right: none;
     position: relative;
+    transition: background-color 0.3s ease;
     cursor: pointer;
 }
 
@@ -49,19 +63,27 @@ header {
     background: #ffffff;
     margin-top: 14px;
     margin-left: -1px;
+    transition: all 0.2s ease 0.16s;
 }
 
-.menu__dropdown a,
-.dropdown__skin {
+/* .menu__dropdown a, */
+.dropdown__skin,
+.skin-content__item {
     min-width: 254px;
-    font-size: 14px;
-    line-height: 16px;
-    font-weight: normal;
-    text-decoration: none;
-    color: #555555;
+    /* text-decoration: none; */
+    /* color: #555555; */
     display: block;
     padding: 12px 0 12px 8px;
+    transition: background-color 0.3s ease;
+    list-style: none;
     /* border-bottom: 2px solid #f3f3f3; */
+}
+
+.dropdown__skin a {
+    text-decoration: none;
+    color: #555555;
+    line-height: 16px;
+    font-weight: normal;
 }
 
 hr {
@@ -71,6 +93,10 @@ hr {
 
 .box__menu:hover > .menu__dropdown {
     display: block;
+}
+
+.box__menu:hover {
+    background-color: #f5f5f5;
 }
 
 .menu__dropdown > .dropdown__skin:hover {
@@ -117,6 +143,7 @@ hr {
     padding: 8px;
     background: #ffffff;
     margin-left: 16px;
+    transition: all 0.2s ease 0.1s;
 }
 
 .skin__content::before {
@@ -125,12 +152,12 @@ hr {
     position: absolute;
     top: 0;
     bottom: 0;
-    padding: 0 12px;
+    padding: 0 16px;
     transform: translateX(-100%);
     background-color: transparent;
 }
 
-.skin__content a:hover {
+.skin__content li:hover {
     background: #f5f5f5;
 }
 
@@ -139,27 +166,41 @@ hr {
 }
 
 .box__menu p {
-    font-size: 14px;
-    font-weight: bold;
     color: #555555;
 }
 
-.box__menu span {
+.box__menu > span {
     color: #555555;
     font-size: 16px;
 }
 
 .box__search {
-    padding: 12px 344px 12px 12px;
-    border: 1px solid #dfdfdf;
-    border-left: none;
+    display: flex;
+    flex: 1;
     position: relative;
     background-color: #f5f5f5;
 }
 
 .box__search input {
+    width: 100%;
     outline: none;
     background-color: #f5f5f5;
+    line-height: 16px;
+    padding: 12px 12px 12px 12px;
+    border: 1px solid #dfdfdf;
+}
+
+.box__search input:hover {
+    border-color: #555555;
+}
+
+.box__search input:focus {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+.box__search input::placeholder {
+    color: #a4a4a4;
 }
 
 .box__search span {
@@ -168,16 +209,40 @@ hr {
     top: 10px;
     right: 3px;
     font-size: 22px;
+    cursor: pointer;
 }
 
 .content__info {
     display: flex;
     align-items: center;
+    margin-left: auto;
 }
 
 .info__cart {
     display: flex;
     align-items: center;
+}
+
+.info__cart::after {
+    content: " ";
+    display: block;
+    background-color: #dfdfdf;
+    padding: 16px 1px;
+    margin: 0 20px;
+}
+
+.info-cart__inner {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 9px 17px;
+    border-radius: 4px;
+    background: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.info-cart__inner:hover {
+    background: #f5f5f5;
 }
 
 .info__cart span {
@@ -186,8 +251,6 @@ hr {
 }
 
 .info__cart p {
-    font-size: 14px;
-    font-weight: bold;
     color: #555555;
     margin-left: 7px;
 }
@@ -195,6 +258,15 @@ hr {
 .info__person {
     display: flex;
     align-items: center;
+    cursor: pointer;
+    padding: 9px 17px;
+    border-radius: 4px;
+    background: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.info__person:hover {
+    background: #f5f5f5;
 }
 
 .info__person span:nth-child(1) {
@@ -204,24 +276,11 @@ hr {
 }
 
 .info__person p {
-    color: #a8a1a1;
-    font-size: 14px;
-    font-weight: bold;
-    flex: none;
+    color: #555555;
+    white-space: nowrap;
 }
 
 .info__person span:nth-child(3) {
     color: #555555;
     font-size: 16px;
 }
-.info__cart::after {
-    content: " ";
-    display: block;
-    background-color: #dfdfdf;
-    padding: 16px 1px;
-    margin: 0 15px;
-}
-
-/* .box__menu:hover {
-    cursor: pointer;
-} */
